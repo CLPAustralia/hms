@@ -41,6 +41,13 @@ class Diary
     /**
      * @var string
      *
+     * @ORM\Column(name="title", type="string", length=255)
+     */
+    private $title;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="author", type="string", length=255)
      */
     private $author;
@@ -109,6 +116,29 @@ class Diary
     public function getWeather()
     {
         return $this->weather;
+    }
+
+    /**
+     * Set title
+     *
+     * @param string $title
+     *
+     * return Diary
+     */
+    public function setTitle($title)
+    {
+      $this->title = $title;
+      return $this;
+    }
+
+    /**
+     * Get title
+     *
+     * @return string
+     */
+    public function getTitle()
+    {
+      return $this->title;
     }
 
     /**

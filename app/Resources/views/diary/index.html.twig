@@ -4,8 +4,12 @@
 
 {% block body %}
   {% for diary in diaries %}
-    <p>Date: {{ diary.diaryDate|date('Y-m-d') }}</p>
-    <p>Weather: {{ diary.weather }}</p>
+    {% if diary.title %}
+      <h3>{{ diary.title }}</h3>
+      <h5><p>{{ diary.diaryDate|date('Y-m-d') }}:{{ diary.weather}}</p></h5>
+    {% else %}
+      <h3><p>{{ diary.diaryDate|date('Y-m-d') }}:{{ diary.weather}}</p></h3>
+    {% endif %}
     <p>Author: {{ diary.author }}</p>
     <p>Content: {{ diary.content }}</p>
   {% else %}
