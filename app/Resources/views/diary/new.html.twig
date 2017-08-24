@@ -1,8 +1,10 @@
 {% block title%}New Diary{% endblock title%}
 
+{% block title %}{{ 'title.create_diary'|trans }}{% endblock title %}
+
 {% block body %}
-{{ form_start(form)}}
-{{ form_widget(form) }}
-<input type="submit" value="{{ 'action.diary.create' }}">
-{{ form_end(form) }}
+  {{ form_start(form)}}
+  {{ form_widget(form) }}
+  <input type="submit" value="{{ 'action.create_diary'|trans }}">
+  {{ form_end(form) }}
 {% endblock body %}

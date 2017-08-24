@@ -1,16 +1,18 @@
 {% extends 'base.html.twig' %}
 
+{% block title %}{{ 'title.edit_diary'|trans }}{% endblock title %}
+
 {% block body %}
 
   {{ include('diary/_form.html.twig', {
       form: edit_form, 
-      button_label: 'action.diary.save', 
+      button_label: 'action.update_diary'|trans, 
       button_css: 'btn' 
   }) }}
 
   {{ include('diary/_form.html.twig', {
       form: delete_form, 
-      button_label: 'action.diary.delete', 
+      button_label: 'action.delete_diary'|trans, 
       button_css: 'btn' 
   }) }}
 

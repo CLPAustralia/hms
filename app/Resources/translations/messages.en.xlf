@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="en" datatype="plaintext" original="file.ext">
+        <body>
+
+            <trans-unit id="title.new_diary">
+                <source>title.new_diary</source>
+                <target>New Diary</target>
+            </trans-unit>
+            <trans-unit id="title.edit_diary">
+                <source>title.edit_diary</source>
+                <target>Edit Diary</target>
+            </trans-unit>
+            <trans-unit id="title.list_diary">
+                <source>title.list_diary</source>
+                <target>List Diary</target>
+            </trans-unit>
+
+            <trans-unit id="action.create_diary">
+                <source>action.create_diary</source>
+                <target>Create Diary</target>
+            </trans-unit>
+            <trans-unit id="action.edit_diary">
+                <source>action.edit_diary</source>
+                <target>Edit Diary</target>
+            </trans-unit>
+            <trans-unit id="action.update_diary">
+                <source>action.update_diary</source>
+                <target>Update Diary</target>
+            </trans-unit>
+            <trans-unit id="action.delete_diary">
+                <source>action.delete_diary</source>
+                <target>Delete Diary</target>
+            </trans-unit>
+
+            <trans-unit id="label.diary_date">
+                <source>label.diary_date</source>
+                <target>Date</target>
+            </trans-unit>
+            <trans-unit id="label.author">
+                <source>label.author</source>
+                <target>Author</target>
+            </trans-unit>
+            <trans-unit id="label.weather">
+                <source>label.weather</source>
+                <target>Weather</target>
+            </trans-unit>
+            <trans-unit id="label.title">
+                <source>label.title</source>
+                <target>Title</target>
+            </trans-unit>
+            <trans-unit id="label.content">
+                <source>label.content</source>
+                <target>Content</target>
+            </trans-unit>
+
+            <trans-unit id="">
+                <source></source>
+                <target></target>
+            </trans-unit>
+
+        </body>
+    </file>
+</xliff>
+

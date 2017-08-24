@@ -14,11 +14,11 @@ class DiaryType extends AbstractType
   public function buildForm(FormBuilderInterface $builder, array $options)
   {
     $builder
-      ->add('diaryDate', DateTimeType::class, ['label' => 'label.diary.date'])
-      ->add('weather', null, ['label' => 'label.diary.weather'])
-      ->add('title', null, ['label' => 'label.diary.title'])
-      ->add('author', null, ['label' => 'label.diary.author'])
-      ->add('content', null, ['label' => 'label.diary.content']);
+      ->add('diaryDate', DateTimeType::class, ['label' => 'label.diary_date'])
+      ->add('weather', null, ['label' => 'label.weather'])
+      ->add('title', null, ['label' => 'label.title'])
+      ->add('author', null, ['label' => 'label.author'])
+      ->add('content', null, ['label' => 'label.content']);
   }
 
   public function configureOptions(OptionsResolver $resolver)
