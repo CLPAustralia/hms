@@ -14,11 +14,12 @@
     {% endif %}
     <p>Author: {{ diary.author }}</p>
     <p>Content: {{ diary.content }}</p>
+    <a href="{{ path('diary_edit', {'id': diary.id}) }}">{{ 'action.edit_diary'  }}</a>
   {% else %}
     No diary.
   {% endfor %}
 
-  <a href="{{ path('diary_new') }}">{{ 'action.diary.create' }}</a>
+  <p><a href="{{ path('diary_new') }}">{{ 'action.diary.create' }}</a></p>
 
 {% endblock %}
 
