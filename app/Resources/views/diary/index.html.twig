@@ -6,9 +6,10 @@
   {% for diary in diaries %}
     {% if diary.title %}
       <h3>{{ diary.title }}</h3>
-      <h5><p>{{ diary.diaryDate|date('Y-m-d') }}:{{ diary.weather}}</p></h5>
+      <h5><p>{{ diary.diaryDate|date('Y-m-d') }} {{ diary.weather}}</p></h5>
     {% else %}
-      <h3><p>{{ diary.diaryDate|date('Y-m-d') }}:{{ diary.weather}}</p></h3>
+      <h3><p>{{ diary.diaryDate|date('Y-m-d') }}</p></h3>
+      <h5>{{ diary.weather}}</h5>
     {% endif %}
     <p>Author: {{ diary.author }}</p>
     <p>Content: {{ diary.content }}</p>
