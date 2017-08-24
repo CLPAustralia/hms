@@ -2,9 +2,16 @@
 
 {% block body %}
 
-  {{ form_start(edit_form) }}
-  {{ form_widget(edit_form) }}
-  <input type="submit" value="{{ 'button.diary.save'|trans }}" />
-  {{ form_end(edit_form) }}
+  {{ include('diary/_form.html.twig', {
+      form: edit_form, 
+      button_label: 'action.diary.save', 
+      button_css: 'btn' 
+  }) }}
+
+  {{ include('diary/_form.html.twig', {
+      form: delete_form, 
+      button_label: 'action.diary.delete', 
+      button_css: 'btn' 
+  }) }}
 
 {% endblock %}

@@ -40,9 +40,42 @@ class DiaryController extends Controller
     if ($editForm->isSubmitted() && $editForm->isValid())
     {
       $em->flush();
-      $this->addFlash('success', 'diary.update_successfully');
+      $this->addFlash('success', 'diary.updated_successfully');
     }
-    return $this->render('diary/edit.html.twig', ['diary' => $diary, 'edit_form' =>  $editForm->createView()]);
+    $deleteForm = $this->createDeleteForm($diary);
+    return $this->render(
+      'diary/edit.html.twig', 
+      [
+        'diary' => $diary, 
+        'edit_form' =>  $editForm->createView(), 
+        'delete_form' => $deleteForm->createView()
+      ]
+    );
+  }
+
+  /**
+   * @Route("/{id}", name="diary_delete")
+   * @Method("DELETE")
+   */
+  public function deleteAction(Diary $diary, Request $request)
+  {
+    $form = $this->createDeleteForm($diary);
+    $form->handleRequest($request);
+    if ($form->isSubmitted() && $form->isValid()) {
+      $em = $this->getDoctrine()->getManager();
+      $em->remove($diary);
+      $em->flush();
+      $this->addFlash('success', 'diary.deleted_successfully');
+    }
+    return $this->redirectToRoute('diary_index');
+  }
+
+  public function createDeleteForm(Diary $diary)
+  {
+    return $this->createFormBuilder()
+      ->setAction($this->generateUrl('diary_delete', ['id' => $diary->getId()]))
+      ->setMethod('DELETE')
+      ->getForm();
   }
 }
 
