@@ -17,7 +17,24 @@ use AppBundle\Form\DiaryType;
  */
 class DiaryController extends Controller
 {
-  
+
+    /**
+     * @Route("/new", name="diary_new")
+     * */  
+    public function newAction(Request $request)
+    {
+        $diary = new Diary();
+        $form = $this->createForm(DiaryType::class, $diary);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() & $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($diary);
+            $em->flush($diary);
+            $this->addFlash('success', 'diary.added_successfully');
+            return $this->redirectToRoute('diary_index');
+        }
+        return $this->render('diary/new.html.twig', ['diary' => $diary, 'form' => $form->createView()]);
+    }
   /**
    * @Route("/", defaults={ "page": 1}, name="diary_index")
    * @Method("GET")
@@ -29,7 +46,7 @@ class DiaryController extends Controller
   }
 
   /**
-   * @Route("/{id}/edit")
+   * @Route("/{id}/edit", name="diary_edit")
    * @Method({"GET", "POST"})
    */
   public function editAction(Diary $diary, Request $request)

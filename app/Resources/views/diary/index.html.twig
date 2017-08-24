@@ -3,6 +3,7 @@
 {% block title%}Diary{% endblock %}
 
 {% block body %}
+
   {% for diary in diaries %}
     {% if diary.title %}
       <h3>{{ diary.title }}</h3>
@@ -16,5 +17,8 @@
   {% else %}
     No diary.
   {% endfor %}
+
+  <a href="{{ path('diary_new') }}">{{ 'action.diary.create' }}</a>
+
 {% endblock %}
 
